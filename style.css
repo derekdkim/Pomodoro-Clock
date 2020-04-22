@@ -1,0 +1,94 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: 0;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+#background {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#message-display {
+  display: flex;
+  justify-content: center;
+  height: 4em;
+  width: 60%;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  color: black
+}
+
+#display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: #fd5e53;
+  width: 8em;
+  border-radius: 10px;
+  font-size: 3em;
+}
+
+#time-display {
+  display: flex;
+  justify-content: center;
+}
+
+.timer-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 30px;
+}
+
+.timer-buttons img {
+  height: 30px;
+  width: 30px;
+}
+
+#settings {
+  margin-top: 30px;
+  background-color: #fd5e53;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+
+.setting {
+  display: grid;
+  width: 10em;
+  margin: 20px;
+  grid-template-columns: 10em;
+  grid-template-rows: repeat(2, 5em);
+}
+
+.setting h1 {
+  justify-self: center;
+}
+
+.adjust {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.adjust img {
+  height: 50px;
+  width: 50px;
+}
+
+.right-arrow img {
+  transform: rotate(180deg);
+}

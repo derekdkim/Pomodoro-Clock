@@ -1,25 +1,40 @@
 <html>
   <header>
     <title>Pomodoro Clock</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </header>
-  <div id="timer">
-    <div id="display">
-      <h1 id="time-display"></h1>
+  <div id="background">
+    <div id="message-display">
+      <h1 id="message-bar">Pomodoro Clock</h1>
     </div>
-    <div id="buttons">
-      <button id="start">Start</button>
-      <button id="pause">Pause</button>
-      <button id="reset">Stop</button>
-    </div>
-    <div id="time-toggle">
-      <div id="settings-display">
-          <h1>Pomodo Time: <h1 id="pomodoro-time"></h1></h1>
-          <h1>Break: <h1 id="break-time"></h1></h1>
+    <div id="timer">
+      <div id="display">
+        <h1 id="time-display"></h1>
+        <div class="timer-buttons">
+          <button id="start"><img src="img/play.svg"></button>
+          <button id="pause"><img src="img/pause.svg"></button>
+          <button id="reset"><img src="img/stop.svg"></button>
+        </div>
       </div>
-      <button id="lower-pomo-time">-P</button>
-      <button id="raise-pomo-time">+P</button>
-      <button id="lower-break-time">-B</button>
-      <button id="raise-break-time">+B</button>      
+    </div>
+    <div id="settings">
+      <div id="work-setting" class="setting">
+        <h1>Work</h1>
+        <div id="work-adjust" class="adjust">
+          <button id="lower-pomo-time" class="left-arrow"><img src="img/arrow.svg"></button>
+          <h1 id="pomodoro-time"></h1>
+          <button id="raise-pomo-time" class="right-arrow"><img src="img/arrow.svg"></button>
+        </div>
+      </div>
+      <div id="break-setting" class="setting">
+        <h1>Break</h1>
+        <div id="break-adjust" class="adjust">
+          <button id="lower-break-time" class="left-arrow"><img src="img/arrow.svg"></button>
+          <h1 id="break-time"></h1>
+          <button id="raise-break-time" class="right-arrow"><img src="img/arrow.svg"></button> 
+        </div>
+      </div>
     </div>
   </div>
   <script src="script.js"></script>

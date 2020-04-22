@@ -32,7 +32,6 @@ class Timer {
 
   start () {
     if (!this.isActive) {
-      console.log('Started!');
       this.isActive = true;
       this.startTime = Date.now();
     }
@@ -40,18 +39,17 @@ class Timer {
 
   pause () {
     if (this.isActive) {
-      console.log('Paused!');
       this.isActive = false;
       this.totalTimeElapsed += this.timeElapsed();
     }
   }
 
   reset () {
-    console.log('Stopped!');
     this.isActive = false;
     this.isComplete = false;
     this.startTime = 0;
     this.totalTimeElapsed = 0;
+    document.getElementById('message-bar').textContent = "Pomodoro Clock";
   }
 }
 
@@ -97,12 +95,22 @@ const intervalTimer = () => {
       pomodoro.pause();
     }
 
+    // Message Bar
+    if (!pomodoro.isComplete && timeInSec < (pomodoro.goalTime / 1000)) {
+      document.getElementById('message-bar').textContent = 'Stay focused!';
+    } else {
+      if (!breakTimer.isComplete && pomodoro.isComplete) {
+        document.getElementById('message-bar').textContent = 'Time for a break!';
+      }
+    }
+
     // Start Break Timer
     if (pomodoro.isComplete) {
       const breakTimeInSec = Math.round(breakTimer.getTime() / 1000);
       document.getElementById('time-display').textContent = formatSecToMMSS(breakTimeInSec);
 
       if (breakTimeInSec === 0) {
+        document.getElementById('message-bar').textContent = 'Great work!';
         breakTimer.reset();
         clearInterval(interval);
       }
